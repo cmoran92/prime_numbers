@@ -23,4 +23,12 @@ class ServiceControllerTest < ActionController::TestCase
     assert_response :success
     assert_equal [2,3], json_response
   end
+
+  test "should get first prime number after resetting" do
+    get :index
+    delete :delete
+    get :index
+    assert_response :success
+    assert_equal [2], json_response
+  end
 end
